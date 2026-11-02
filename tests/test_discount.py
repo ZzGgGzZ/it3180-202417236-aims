@@ -1,0 +1,20 @@
+import unittest
+
+from aims.cart import Cart
+from aims.dvd import DigitalVideoDisc
+
+
+class TestDiscount(unittest.TestCase):
+    def setUp(self):
+        self.cart = Cart()
+        self.cart.add_dvd(DigitalVideoDisc("Test", cost=100))
+
+    def test_discount_20_percent(self):
+        self.assertAlmostEqual(self.cart.total_cost_with_discount(20), 80)
+
+    def test_discount_0_percent(self):
+        self.assertAlmostEqual(self.cart.total_cost_with_discount(0), 100)
+
+    def test_invalid_percent(self):
+        with self.assertRaises(ValueError):
+            self.cart.total_cost_with_discount(150)
