@@ -16,3 +16,15 @@
 ## 3. feature/* khác topic/* ra sao?
 - feature/*: thêm chức năng cho phần mềm (print_cart, search_by_title).
 - topic/*: thay đổi theo chủ đề, không phải tính năng: tài liệu, cấu hình, template.
+## So sánh 3 kiểu merge (từ lịch sử repo)
+| PR | Kiểu merge | Kết quả trên master |
+|---|---|---|
+| #4 cart-print | Merge commit | Giữ 3 commit + 1 commit "Merge pull request #4" |
+| #6 use case | Squash | 2 commit gộp thành 1: "docs: add use case diagram (#6)" |
+| #7 answers | Rebase | 2 commit được chép nối thẳng lên master, SHA mới, không có merge commit |
+
+|  | Merge commit | Squash | Rebase |
+|---|---|---|---|
+| Giữ commit chi tiết | Có | Không (gộp 1) | Có (SHA mới) |
+| Lịch sử tuyến tính | Không | Có | Có |
+| Revert cả tính năng | 1 lệnh (-m 1) | 1 lệnh | Nhiều commit |
