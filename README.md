@@ -4,3 +4,4 @@
 
 - Sinh viên: Nguyễn Hoàng Giang – MSSV 202417236
 - Chạy chương trình: `python main.py`
+- Yêu cầu: Python >= 3.10
