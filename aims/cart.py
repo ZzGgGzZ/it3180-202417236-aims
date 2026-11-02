@@ -34,3 +34,7 @@ class Cart:
         for i, dvd in enumerate(self.items, start=1):
             print(f"{i}. {dvd}")
         print("**************************************************")
+
+    def total_cost_with_discount(self, percent):
+        """Tổng tiền sau khi giảm percent %."""
+        return self.total_cost() * percent / 100
